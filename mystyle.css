@@ -2,7 +2,7 @@ body {
     text-align: center;
 }
 
-.header {
+#header {
     background-color: lightgray;
     text-align: center;
     height: 20%;
