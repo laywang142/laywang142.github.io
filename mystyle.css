@@ -2,3 +2,10 @@ body {
     background-color: lightblue;
     text-align: center;
 }
+
+.header {
+    background-color: lightgray;
+    text-align: center;
+    height: 20%;
+    top: 0%;
+}
