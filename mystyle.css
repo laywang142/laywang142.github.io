@@ -2,7 +2,7 @@ body {
     text-align: center;
 }
 
-#header {
+/* #header {
     background-color: lightgray;
     text-align: center;
     height: 30%;
@@ -10,7 +10,7 @@ body {
     top: 0%;
     border-bottom: 1px solid black;
     z-index: 1;
-}
+}*/ 
 
 button {
     padding: 0;
