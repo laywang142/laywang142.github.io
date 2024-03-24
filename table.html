@@ -73,27 +73,7 @@
 
     <!--- End Main Table-->
 
-    <script>
-        var $table = $('#table')
-      
-        function selectFormatter(value) {
-          var options = ''
-          for (var i = 0; i < 21; i++) {
-            options += '<option value="' + i + '"' + (i === value ? 'selected' : '') + '>' + i + '</option>'
-          }
-          return '<select>' + options + '</select>'
-        }
-      
-        window.selectEvents = {
-          'change select': function (e, value, row, index) {
-            row.id = +$(e.target).val()
-            $table.bootstrapTable('updateRow', {
-              index: index,
-              row: row
-            })
-          }
-        }
-      </script>
+ 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
