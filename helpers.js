@@ -34,3 +34,31 @@ function filterRegionalMaterialsForCharacter(data, characterName) {
         }
     return filteredMaterials;
 }
+
+// Filtering common ascension
+function findIdsWithCharacterCommon(data, characterName) {
+    const ids = {};
+  for (const key in data) {
+    if (data.hasOwnProperty(key)) {
+      const characters = data[key].characters;
+      if (characters && characters.includes(characterName)) {
+        const items = data[key].items;
+        if (items) {
+          ids[key] = items.map(item => item.id);
+        }
+      }
+    }
+  }
+  return ids;
+}
+
+// Filtering Ascension materials
+
+function filterAscension(data, category) {
+    if (data[category] && typeof data[category] === 'object') {
+        const categoryIDs = Object.values(data[category]).map(item => item.id);
+        return categoryIDs;
+      } else {
+        return [];
+      }
+    }
