@@ -1,3 +1,11 @@
+// Check Input Values
+function isNumeric(value) {
+  return isNaN(value);
+}
+
+function showWarning(fieldName) {
+  alert("Please enter a numeric value for " + fieldName);
+}
 
 // Filtering function
 function filterMaterialsForCharacter(materials, characterName) {
@@ -62,3 +70,5 @@ function filterAscension(data, category) {
         return [];
       }
     }
+
+    

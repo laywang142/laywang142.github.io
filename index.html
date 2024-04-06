@@ -76,11 +76,11 @@
     <div class = 'row'>
       <div class = 'col-2'></div>
       <div class = 'col-8'>
-        <form>
+        <form onkeypress="return event.keyCode != 13">
           <div class="row mb-3">
         <label for="inputLabel" class="col-sm-2 col-form-label">Character</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="inputName" onchange = "init(this)">
+          <input type="text" class="form-control" id="inputName" oninput = "init(this)">
         </div>
       </div>
       </form>
@@ -164,125 +164,120 @@
     <div class='row'>
       <div class="col-2"></div>
       <div class="col-8">
-        <form>
+        <form onkeypress="return event.keyCode != 13" id = "myForm">
 
           <div class="row mb-3">
             <fieldset class="row mb-3">
               <legend class="col-form-label col-sm-4 pt-0">Target Level</legend>
+              <!-- Radio Buttons -->
               <div class="col-sm-12 offset-sm-2">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1"
-                    checked>
+                    onclick = "filltbl()">
                   <label class="form-check-label" for="gridRadios1">
                     20
                   </label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" 
+                  onclick = "filltbl()">
                   <label class="form-check-label" for="gridRadios2">
                     40
                   </label>
                 </div>
                 <div class="form-check form-check-inline disabled">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3"
+                  onclick = "filltbl()">
                   <label class="form-check-label" for="gridRadios3">
                     50
                   </label>
                 </div>
                 <div class="form-check form-check-inline disabled">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="option4">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="option4"
+                  onclick = "filltbl()">
                   <label class="form-check-label" for="gridRadios4">
                     60
                   </label>
                 </div>
                 <div class="form-check form-check-inline disabled">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios5" value="option5">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios5" value="option5"
+                  onclick = "filltbl()">
                   <label class="form-check-label" for="gridRadios5">
                     70
                   </label>
                 </div>
                 <div class="form-check form-check-inline disabled">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios6" value="option6">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios6" value="option6"
+                  onclick = "filltbl()">
                   <label class="form-check-label" for="gridRadios6">
                     80
                   </label>
                 </div>
                 <div class="form-check form-check-inline disabled">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios7" value="option7">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios7" value="option7"
+                  checked onclick = "filltbl()">
                   <label class="form-check-label" for="gridRadios7">
                     90
                   </label>
                 </div>
               </div>
+            </fieldset>
           </div>
-          </fieldset>
+          
+          <!-- Inputs boss and common materials-->
           <div class="row mb-3">
             <div class="col-sm-3">
               <label for="inputCost" class="col-sm-12 col-form-label">Boss Materials</label>
-              <input type="number" class="form-control" id="inputBoss" value=0>
+              <input type="number" class="form-control" id="inputBoss" value = 0 oninput = "filltbl()">
             </div>
 
             <div class="col-sm-3">
               <label for="inputCost" class="col-sm-12 col-form-label">Material-low</label>
-              <input type="number" class="form-control" id="inputLvlmat1" value=0>
+              <input type="number" class="form-control" id="inputLvlmat1" value=0 oninput = "filltbl()">
             </div>
 
             <div class="col-sm-3">
               <label for="inputCost" class="col-sm-12 col-form-label">Material-med</label>
-              <input type="number" class="form-control" id="inputLvlmat2" value=0>
+              <input type="number" class="form-control" id="inputLvlmat2" value=0 oninput = "filltbl()">
             </div>
 
             <div class="col-sm-3">
               <label for="inputCost" class="col-sm-12 col-form-label">Material-high</label>
-              <input type="number" class="form-control" id="inputLvlmat3" value=0>
+              <input type="number" class="form-control" id="inputLvlmat3" value=0 oninput = "filltbl()">
             </div>
           </div>
 
+          <!-- Inputs Regional and gems-->
           <div class="row mb-3">
             <div class="col-sm-1"></div>
 
             <div class="col-sm-2">
               <label for="inputCost" class="col-sm-12 col-form-label">Regional</label>
-              <input type="number" class="form-control" id="inputRegSpec" value=0>
+              <input type="number" class="form-control" id="inputRegSpec" value=0 oninput = "filltbl()">
             </div>
 
             <div class="col-sm-2">
               <label for="inputCost" class="col-sm-12 col-form-label">Sliver</label>
-              <input type="number" class="form-control" id="inputSliver" value=0>
+              <input type="number" class="form-control" id="inputSliver" value=0 oninput = "filltbl()">
             </div>
 
             <div class="col-sm-2">
               <label for="inputCost" class="col-sm-12 col-form-label">Fragment</label>
-              <input type="number" class="form-control" id="inputFragment" value=0>
+              <input type="number" class="form-control" id="inputFragment" value=0 oninput = "filltbl()">
             </div>
 
             <div class="col-sm-2">
               <label for="inputCost" class="col-sm-12 col-form-label">Chunk</label>
-              <input type="number" class="form-control" id="inputChunk" value=0>
+              <input type="number" class="form-control" id="inputChunk" value=0 oninput = "filltbl()">
             </div>
 
             <div class="col-sm-2">
               <label for="inputCost" class="col-sm-12 col-form-label">Gemstone</label>
-              <input type="number" class="form-control" id="inputGem" value=0>
+              <input type="number" class="form-control" id="inputGem" value=0 oninput = "filltbl()">
             </div>
 
             <div class="col-sm-1"></div>
           </div>
-
-          <!-- <div class="row mb-3">
-        <div class="col-sm-10 offset-sm-4">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck1">
-            <label class="form-check-label" for="gridCheck1">
-              Add Balance
-            </label>
-          </div>
-        </div>
-      </div> -->
-
-          <!-- <div class="text-center">
-            <button type="submit" class="btn btn-primary mt-1" id="mainsub">Submit</button>
-          </div> -->
         </form>
       </div>
       <div class='col-2'></div>
