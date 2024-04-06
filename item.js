@@ -95,7 +95,7 @@ function filltbl() {
     var rem = {}
 
     // boss materials
-    if ( startVals.boss - bossinput < 0) {
+    if (startVals.boss - bossinput < 0) {
         rem.boss = 0;
     } else {
         rem.boss = startVals.boss - bossinput;
@@ -110,7 +110,7 @@ function filltbl() {
 
     // common materials
     if (startVals.matlow - matlow < 0) {
-        rem.matlow = 0 ;
+        rem.matlow = 0;
 
         let extralow = matlow - startVals.matlow;
         // pass extra to matmed? 
@@ -119,22 +119,22 @@ function filltbl() {
 
         // calculate rem.matmed
 
-        if(startVals.matmed - newmatmed < 0 ) {
+        if (startVals.matmed - newmatmed < 0) {
             rem.matmed = 0;
 
             let extramed = newmatmed - startVals.matmed;
 
-            let newmathigh = Math.floor(extramed/3) + mathigh;
+            let newmathigh = Math.floor(extramed / 3) + mathigh;
 
-            if(startVals.mathigh - newmathigh < 0) {
+            if (startVals.mathigh - newmathigh < 0) {
                 rem.mathigh = 0;
             } else {
                 rem.mathigh = startVals.mathigh - newmathigh;
             }
         } else {
             rem.matmed = startVals.matmed - newmatmed;
-            
-            if(startVals.mathigh - mathigh < 0) {
+
+            if (startVals.mathigh - mathigh < 0) {
                 rem.mathigh = 0;
             } else {
                 rem.mathigh = startVals.mathigh - mathigh;
@@ -145,35 +145,173 @@ function filltbl() {
     } else {
         rem.matlow = startVals.matlow - matlow;
 
-        if(startVals.matmed - matmed < 0 ) {
+        if (startVals.matmed - matmed < 0) {
             rem.matmed = 0;
 
             let extramed = matmed - startVals.matmed;
 
-            let newmathigh = Math.floor(extramed/3) + mathigh;
+            let newmathigh = Math.floor(extramed / 3) + mathigh;
 
-            if(startVals.mathigh - newmathigh < 0) {
+            if (startVals.mathigh - newmathigh < 0) {
                 rem.mathigh = 0;
             } else {
                 rem.mathigh = startVals.mathigh - newmathigh;
             }
         } else {
             rem.matmed = startVals.matmed - matmed;
-            
-            if(startVals.mathigh - mathigh < 0) {
+
+            if (startVals.mathigh - mathigh < 0) {
                 rem.mathigh = 0;
             } else {
                 rem.mathigh = startVals.mathigh - mathigh;
             }
 
+        }
     }
-}
-    
+
+    // Ascension Gems 
+
+    if (startVals.sliver - sliver < 0) {
+        rem.sliver = 0;
+
+        let extrasliver = sliver - startVals.sliver;
+        // pass extra to fragment? 
+
+        let newfragment = Math.floor(extrasliver / 3) + fragment;
+
+        // calculate rem.fragment
+
+        if (startVals.fragment - newfragment < 0) {
+            rem.fragment = 0;
+
+            let extrafragment = newfragment - startVals.fragment;
+
+            let newchunk = Math.floor(extrafragment/ 3) + chunk;
+
+            if (startVals.chunk - newchunk < 0) {
+                rem.chunk = 0;
+                
+                let extrachunk = newchunk - startVals.chunk;
+
+                let newgem = Math.floor(extrachunk/3) + gem;
+
+                if(startVals.gem - newgem < 0) {
+                    rem.gem = 0;
+                } else {
+                    rem.gem = startVals.gem - newgem;
+                }
+
+            } else {
+                rem.chunk = startVals.chunk - newchunk;
+
+                if(startVals.gem - gem < 0) {
+                    rem.gem = 0;
+                } else {
+                    rem.gem = startVals.gem - gem;
+                }
+            }
+
+        } else {
+            rem.fragment = startVals.fragment - newfragment;
+
+            if (startVals.chunk - chunk < 0) {
+                rem.chunk = 0;
+                
+                let extrachunk = chunk - startVals.chunk;
+
+                let newgem = Math.floor(extrachunk/3) + gem;
+
+                if(startVals.gem - newgem < 0) {
+                    rem.gem = 0;
+                } else {
+                    rem.gem = startVals.gem - newgem;
+                }
+
+            } else {
+                rem.chunk = startVals.chunk - chunk;
+
+                if(startVals.gem - gem < 0) {
+                    rem.gem = 0;
+                } else {
+                    rem.gem = startVals.gem - gem;
+                }
+            }
+
+        }
+
+    } else {
+        rem.sliver= startVals.sliver - sliver;
+
+        if (startVals.fragment - fragment < 0) {
+            rem.fragment = 0;
+
+            let extrafragment = fragment - startVals.fragment;
+
+            let newchunk = Math.floor(extrafragment/ 3) + chunk;
+
+            if (startVals.chunk - newchunk < 0) {
+                rem.chunk = 0;
+                
+                let extrachunk = newchunk - startVals.chunk;
+
+                let newgem = Math.floor(extrachunk/3) + gem;
+
+                if(startVals.gem - newgem < 0) {
+                    rem.gem = 0;
+                } else {
+                    rem.gem = startVals.gem - newgem;
+                }
+
+            } else {
+                rem.chunk = startVals.chunk - newchunk;
+
+                if(startVals.gem - gem < 0) {
+                    rem.gem = 0;
+                } else {
+                    rem.gem = startVals.gem - gem;
+                }
+            }
+
+        } else {
+            rem.fragment = startVals.fragment - fragment;
+
+            if (startVals.chunk - chunk < 0) {
+                rem.chunk = 0;
+                
+                let extrachunk = chunk - startVals.chunk;
+
+                let newgem = Math.floor(extrachunk/3) + gem;
+
+                if(startVals.gem - newgem < 0) {
+                    rem.gem = 0;
+                } else {
+                    rem.gem = startVals.gem - newgem;
+                }
+
+            } else {
+                rem.chunk = startVals.chunk - chunk;
+
+                if(startVals.gem - gem < 0) {
+                    rem.gem = 0;
+                } else {
+                    rem.gem = startVals.gem - gem;
+                }
+            }
+
+        }
+    }
+
+    // Fill the Table
+
     document.getElementById('boss').textContent = rem.boss;
     document.getElementById('low').textContent = rem.matlow;
     document.getElementById('med').textContent = rem.matmed;
     document.getElementById('high').textContent = rem.mathigh;
     document.getElementById('reg').textContent = rem.regsp;
+    document.getElementById('sliver').textContent = rem.sliver;
+    document.getElementById('fragment').textContent = rem.fragment;
+    document.getElementById('chunk').textContent = rem.chunk;
+    document.getElementById('gem').textContent = rem.gem;
 
 }
 
