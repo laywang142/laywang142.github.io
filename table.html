@@ -13,7 +13,7 @@
   <body>
     <nav class="navbar bg-body-tertiary fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Budgeting Sheet</a>
+        <a class="navbar-brand" href="#"> <s>Budgeting</s>Genshin Planning Sheet</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -31,9 +31,6 @@
                 <a class="nav-link active" aria-current="page" href="table.html">Table</a>
               </li>
 
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="test.html">test</a>
-              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown
@@ -59,21 +56,7 @@
 
     <!--- Begin Main Table -->
 
-    <table
-  id="table"
-  data-toggle="table"
-  data-search="true"
-  data-url="json/data1.json"
-  data-sort-name="Type">
-  <thead>
-    <tr>
-      <th data-field="Type" data-sortable="true">Type</th>
-      <th data-field="Label" data-sortable="true">Label</th>
-      <th data-field="Cost" data-sortable="true">Cost</th>
-    </tr>
-  </thead>
-
-</table>
+    
 
     <!--- End Main Table-->
 
@@ -81,30 +64,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <!-- MOCK SNIPPET: DO NOT COPY -->
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
-
-    <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
     
-      // Your web app's Firebase configuration
-      const firebaseConfig = {
-        apiKey: "AIzaSyA50K67IfkvrdD-MFIVejNstjhqVd6vqnw",
-        authDomain: "budget-sheet-4a97a.firebaseapp.com",
-        projectId: "budget-sheet-4a97a",
-        storageBucket: "budget-sheet-4a97a.appspot.com",
-        messagingSenderId: "760760329426",
-        appId: "1:760760329426:web:ce4d4abe2e3955374df90b"
-      };
-    
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script>
-
   </body>
 </html>

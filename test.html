@@ -109,72 +109,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-     <script type="module">
-  
-        // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-  import { getDatabase } from "firebase/database";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyA50K67IfkvrdD-MFIVejNstjhqVd6vqnw",
-    authDomain: "budget-sheet-4a97a.firebaseapp.com",
-    databaseURL: "https://budget-sheet-4a97a-default-rtdb.firebaseio.com",
-    projectId: "budget-sheet-4a97a",
-    storageBucket: "budget-sheet-4a97a.appspot.com",
-    messagingSenderId: "760760329426",
-    appId: "1:760760329426:web:ce4d4abe2e3955374df90b"
-  };
-  
-        // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-  
-      //listen for submit event//(1)
-      document
-        .getElementById('registrationform')
-        .addEventListener('submit', formSubmit);
-  
-      //Submit form(2)
-      function formSubmit(e) {
-        e.preventDefault();
-        // Get Values from the DOM
-        let name = document.querySelector('#name').value;
-        let email = document.querySelector('#email').value;
-        let password = document.querySelector('#password').value;
-        let bio = document.querySelector('#bio').value;
-        let job = document.querySelector('#job').value;
-        let interest = document.querySelector('#interest').value;
-  
-        //send message values(3)
-        sendMessage(name, email, password, bio, job, interest);
-      }
-  
-      //Send Message to Firebase(4)
-      function sendMessage(name, email, password, bio, job, interest) {
-        const database = getDatabase();
-  
-        set(ref(database, 'users/' + Math.floor(Math.random() * 10000000)), {
-          name: name,
-          email: email,
-          password: password,
-          bio: bio,
-          job: job,
-          Interest: interest
-        }).then(() => {
-            //Show Alert Message(5)
-         document.querySelector('.alert').style.display = 'block';
-          //Hide Alert Message After Seven Seconds(6)
-         setTimeout(function () {
-         document.querySelector('.alert').style.display = 'none';
-         }, 7000);
-         document.getElementById('registrationform').reset();
-        }).catch((error) => {
-          alert(error)
-        })
-      }
-    </script>
+ 
   </body>
   
   </html>
