@@ -22,22 +22,19 @@ function filterRegionalMaterialsForCharacter(data, characterName) {
     const filteredMaterials = [];
 
     for (const region in data) {
-        if (data.hasOwnProperty(region)) {
-            const materials = data[region];
-            for (const material of materials) {
-                if (material.characters.includes(characterName)) {
+        data[region].forEach(material => {
+            if (material.characters.includes(characterName)) {
                 // filteredMaterials[materialKey] = material;
                 filteredMaterials.push({
                     indexName: region,
                     materialID: material.id,
-                    materialName: material.name
-                })
-            }
+                    materialName: material.name})
+                }
+            });
         }
-    }
     return filteredMaterials;
 }
-}
+
 
 
 // Putting everything into images
@@ -59,8 +56,12 @@ async function init(input) {
 
     if(character_name != null ){
         let url = 'https://genshin.jmp.blue/characters/' + character_name ;
-        const boss = filterMaterialsForCharacter(bossmat, character_name);
-        const reg = filterRegionalMaterialsForCharacter(regional, character_name);
+
+        const res = await (await fetch(url)).json();
+
+        var boss = filterMaterialsForCharacter(bossmat, character_name);
+        var reg = filterRegionalMaterialsForCharacter(regional, character_name);
+ 
     
         fetch(url)
         .then(res => res.json())
