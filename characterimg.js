@@ -1,13 +1,25 @@
 
-var character_name = document.getElementById('inputName');
+function init(input) {
+    var character_name = input.value.toLowerCase();
 
-if(character_name != null){
-    let url = 'https://genshin-app-api.herokuapp.com/api/characters/info/' + character_name + '?infoDataSize=minimal';
+    if(character_name != null ){
+        let url = 'https://genshin.jmp.blue/characters/' + character_name ;
+    
+        fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById('charimg').src = url + "/card";
+          })
+    
+    }
 
-    fetch(url)
-    .then(res => res.json())
-    .then(data => {
-        document.getElementById('charimg').src = data.cardImageURL;
-      })
-
+//   // Listen for when the input changes.
+//   input.addEventListener('change', onInputChange)
+//   function onInputChange(e) {
+//     reader.readAsDataURL(this.files[0]);
+//   }
 }
+
+
+
+
