@@ -47,10 +47,10 @@
               </ul>
             </li>
           </ul> -->
-          <form class="d-flex mt-3" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+              <form class="d-flex mt-3" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
         </div>
       </div>
     </div>
@@ -62,8 +62,8 @@
     <div class="row">
       <div class="col-2"></div>
       <div class="col-8">
-        <img src="#" class="img-fluid mx-auto d-block" alt="Character Portrait" id = "charimg"
-        style = "width: 200px; height: 350px;">
+        <img src="#" class="img-fluid mx-auto d-block d-none" alt="Character Portrait" id="charimg"
+          style="width: 190px; height: 325px;">
       </div>
       <div class="col-2"></div>
     </div>
@@ -72,20 +72,22 @@
   <div class='mt-4'></div>
 
   <!-- Input Character Name -->
-  <div class = 'container'>
-    <div class = 'row'>
-      <div class = 'col-2'></div>
-      <div class = 'col-8'>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-2'></div>
+      <div class='col-8'>
         <form onkeypress="return event.keyCode != 13">
           <div class="row mb-3">
-        <label for="inputLabel" class="col-sm-2 col-form-label">Character</label>
-        <div class="col-sm-8">
-          <input type="text" class="form-control" id="inputName" oninput = "init(this)">
-        </div>
+            <label for="inputLabel" class="col-sm-2 col-form-label">Character</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="inputName" oninput="init(this)" list="opts">
+              <datalist id="opts"></datalist>
+            </div>
+            <button type="button" class="btn btn-primary col-sm-1" onclick="resetCharacterInput()" id = "rstbtn">x</button>
+          </div>
+        </form>
       </div>
-      </form>
-      </div>
-        <div class = 'col-2'></div>
+      <div class='col-2'></div>
     </div>
   </div>
 
@@ -94,7 +96,7 @@
   <!--- Start Table -->
 
   <div class="table-responsive">
-    <table class="table table-hover">
+    <table class="table table-hover d-none text-center" id="itmtbl">
       <thead>
         <tr>
           <th scope="col">Boss Material</th>
@@ -111,44 +113,53 @@
       <tbody>
         <tr>
           <td>
-            <img src="#" class="img-fluid img-thumbnail mx-auto d-block" alt="item img" id = "bossmat" style = "width: 50px; height: 50px;">
+            <img src="#" class="img-fluid img-thumbnail mx-auto d-block" alt="item img" id="bossmat"
+              style="width: 50px; height: 50px;">
           </td>
           <td>
-            <img src="#" class="img-fluid img-thumbnail mx-auto d-block" alt="item img" id = "matlow" style = "width: 50px; height: 50px;">
+            <img src="#" class="img-fluid img-thumbnail mx-auto d-block" alt="item img" id="matlow"
+              style="width: 50px; height: 50px;">
           </td>
           <td>
-            <img src="#" class="img-fluid img-thumbnail mx-auto d-block" alt="item img" id = "matmed" style = "width: 50px; height: 50px;">
+            <img src="#" class="img-fluid img-thumbnail mx-auto d-block" alt="item img" id="matmed"
+              style="width: 50px; height: 50px;">
           </td>
           <td>
-            <img src="#" class="img-fluid img-thumbnail mx-auto d-block" alt="item img" id = "mathigh" style = "width: 50px; height: 50px;">
+            <img src="#" class="img-fluid img-thumbnail mx-auto d-block" alt="item img" id="mathigh"
+              style="width: 50px; height: 50px;">
           </td>
           <td>
-            <img src="#" class="img-fluid img-thumbnail mx-auto d-block" alt="item img" id = "regimg" style = "width: 50px; height: 50px;">
+            <img src="#" class="img-fluid img-thumbnail mx-auto d-block" alt="item img" id="regimg"
+              style="width: 50px; height: 50px;">
           </td>
           <td>
-            <img src="#" class="img-fluid img-thumbnail mx-auto d-block" alt="item img" id = "sliverimg" style = "width: 50px; height: 50px;">
+            <img src="#" class="img-fluid img-thumbnail mx-auto d-block" alt="item img" id="sliverimg"
+              style="width: 50px; height: 50px;">
           </td>
           <td>
-            <img src="#" class="img-fluid img-thumbnail mx-auto d-block" alt="item img" id = "fragmentimg" style = "width: 50px; height: 50px;">
+            <img src="#" class="img-fluid img-thumbnail mx-auto d-block" alt="item img" id="fragmentimg"
+              style="width: 50px; height: 50px;">
           </td>
           <td>
-            <img src="#" class="img-fluid img-thumbnail mx-auto d-block" alt="item img" id = "chunkimg" style = "width: 50px; height: 50px;">
+            <img src="#" class="img-fluid img-thumbnail mx-auto d-block" alt="item img" id="chunkimg"
+              style="width: 50px; height: 50px;">
           </td>
           <td>
-            <img src="#" class="img-fluid img-thumbnail mx-auto d-block" alt="item img" id = "gemimg" style = "width: 50px; height: 50px;">
+            <img src="#" class="img-fluid img-thumbnail mx-auto d-block" alt="item img" id="gemimg"
+              style="width: 50px; height: 50px;">
           </td>
         </tr>
 
         <tr>
-          <td id = "boss"> </td>
-          <td id = "low"> </td>
-          <td id = "med"> </td>
-          <td id = "high"> </td>
-          <td id = "reg"> </td>
-          <td id = "sliver"> </td>
-          <td id = "fragment"> </td>
-          <td id = "chunk"> </td>
-          <td id = "gem"> </td>
+          <td id="boss" class="mx-auto"> </td>
+          <td id="low" class="mx-auto"> </td>
+          <td id="med" class="mx-auto"> </td>
+          <td id="high" class="mx-auto"> </td>
+          <td id="reg" class="mx-auto"> </td>
+          <td id="sliver" class="mx-auto"> </td>
+          <td id="fragment" class="mx-auto"> </td>
+          <td id="chunk" class="mx-auto"> </td>
+          <td id="gem" class="mx-auto"> </td>
 
         </tr>
       </tbody>
@@ -164,8 +175,9 @@
     <div class='row'>
       <div class="col-1"></div>
       <div class="col-10">
-        <form onkeypress="return event.keyCode != 13" id = "myForm">
+        <form onkeypress="return event.keyCode != 13" id="myForm" class="d-none">
 
+          <!-- Radio buttons -->
           <div class="row mb-3">
             <fieldset class="row mb-3">
               <legend class="col-form-label col-sm-4 pt-0">Target Level</legend>
@@ -173,49 +185,49 @@
               <div class="col-sm-12 offset-sm-2">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1"
-                    onclick = "filltbl()">
+                    onclick="filltbl()">
                   <label class="form-check-label" for="gridRadios1">
                     20
                   </label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" 
-                  onclick = "filltbl()">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2"
+                    onclick="filltbl()">
                   <label class="form-check-label" for="gridRadios2">
                     40
                   </label>
                 </div>
                 <div class="form-check form-check-inline disabled">
                   <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3"
-                  onclick = "filltbl()">
+                    onclick="filltbl()">
                   <label class="form-check-label" for="gridRadios3">
                     50
                   </label>
                 </div>
                 <div class="form-check form-check-inline disabled">
                   <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="option4"
-                  onclick = "filltbl()">
+                    onclick="filltbl()">
                   <label class="form-check-label" for="gridRadios4">
                     60
                   </label>
                 </div>
                 <div class="form-check form-check-inline disabled">
                   <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios5" value="option5"
-                  onclick = "filltbl()">
+                    onclick="filltbl()">
                   <label class="form-check-label" for="gridRadios5">
                     70
                   </label>
                 </div>
                 <div class="form-check form-check-inline disabled">
                   <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios6" value="option6"
-                  onclick = "filltbl()">
+                    onclick="filltbl()">
                   <label class="form-check-label" for="gridRadios6">
                     80
                   </label>
                 </div>
                 <div class="form-check form-check-inline disabled">
                   <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios7" value="option7"
-                  checked onclick = "filltbl()">
+                    checked onclick="filltbl()">
                   <label class="form-check-label" for="gridRadios7">
                     90
                   </label>
@@ -223,27 +235,27 @@
               </div>
             </fieldset>
           </div>
-          
+
           <!-- Inputs boss and common materials-->
           <div class="row mb-3">
             <div class="col-sm-3">
               <label for="inputCost" class="col-sm-12 col-form-label">Boss Materials</label>
-              <input type="number" class="form-control" id="inputBoss" value = 0 oninput = "filltbl()">
+              <input type="number" class="form-control" id="inputBoss" value=0 oninput="filltbl()">
             </div>
 
             <div class="col-sm-3">
               <label for="inputCost" class="col-sm-12 col-form-label">Material-low</label>
-              <input type="number" class="form-control" id="inputLvlmat1" value=0 oninput = "filltbl()">
+              <input type="number" class="form-control" id="inputLvlmat1" value=0 oninput="filltbl()">
             </div>
 
             <div class="col-sm-3">
               <label for="inputCost" class="col-sm-12 col-form-label">Material-med</label>
-              <input type="number" class="form-control" id="inputLvlmat2" value=0 oninput = "filltbl()">
+              <input type="number" class="form-control" id="inputLvlmat2" value=0 oninput="filltbl()">
             </div>
 
             <div class="col-sm-3">
               <label for="inputCost" class="col-sm-12 col-form-label">Material-high</label>
-              <input type="number" class="form-control" id="inputLvlmat3" value=0 oninput = "filltbl()">
+              <input type="number" class="form-control" id="inputLvlmat3" value=0 oninput="filltbl()">
             </div>
           </div>
 
@@ -253,27 +265,27 @@
 
             <div class="col-sm-2">
               <label for="inputCost" class="col-sm-12 col-form-label">Regional</label>
-              <input type="number" class="form-control" id="inputRegSpec" value=0 oninput = "filltbl()">
+              <input type="number" class="form-control" id="inputRegSpec" value=0 oninput="filltbl()">
             </div>
 
             <div class="col-sm-2">
               <label for="inputCost" class="col-sm-12 col-form-label">Sliver</label>
-              <input type="number" class="form-control" id="inputSliver" value=0 oninput = "filltbl()">
+              <input type="number" class="form-control" id="inputSliver" value=0 oninput="filltbl()">
             </div>
 
             <div class="col-sm-2">
               <label for="inputCost" class="col-sm-12 col-form-label">Fragment</label>
-              <input type="number" class="form-control" id="inputFragment" value=0 oninput = "filltbl()">
+              <input type="number" class="form-control" id="inputFragment" value=0 oninput="filltbl()">
             </div>
 
             <div class="col-sm-2">
               <label for="inputCost" class="col-sm-12 col-form-label">Chunk</label>
-              <input type="number" class="form-control" id="inputChunk" value=0 oninput = "filltbl()">
+              <input type="number" class="form-control" id="inputChunk" value=0 oninput="filltbl()">
             </div>
 
             <div class="col-sm-2">
               <label for="inputCost" class="col-sm-12 col-form-label">Gemstone</label>
-              <input type="number" class="form-control" id="inputGem" value=0 oninput = "filltbl()">
+              <input type="number" class="form-control" id="inputGem" value=0 oninput="filltbl()">
             </div>
 
             <div class="col-sm-1"></div>
@@ -285,6 +297,7 @@
   </div>
   <!--- End Main Form-->
 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>

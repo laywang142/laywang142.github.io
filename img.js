@@ -33,6 +33,7 @@ async function init(input) {
         .then(res => res.json())
         .then(data => {
             document.getElementById('charimg').src = url + "/card";
+            document.getElementById('charimg').title = character_name;
             document.getElementById('bossmat').src = 'https://genshin.jmp.blue/materials/boss-material/' + boss.map(item => item.indexName);
             document.getElementById('bossmat').title = boss.map(item => item.indexName);
             document.getElementById('regimg').src = 'https://genshin.jmp.blue/materials/local-specialties/' + reg.map(item => item.materialID);
