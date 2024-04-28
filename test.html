@@ -1,7 +1,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="mystyle.css">
+  <link rel="stylesheet" type="text/css" href="mystyle1.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <title>Registration Form</title>
@@ -13,25 +13,7 @@
 
 <body>
 
-    <!-- Input Character Name -->
-    <div class='container'>
-      <div class='row'>
-        <div class='col-2'></div>
-        <div class='col-8'>
-          <form onkeypress="return event.keyCode != 13">
-            <div class="row mb-3">
-              <label for="inputLabel" class="col-sm-2 col-form-label">Character</label>
-              <div class="col-sm-8">
-                <input type="text" class="form-control" id="inputName" oninput="init(this)" list="opts">
-                <datalist id="opts"></datalist>
-              </div>
-              <button type="button" class="btn btn-primary col-sm-1" onclick="resetCharacterInput()" id = "rstbtn">x</button>
-            </div>
-          </form>
-        </div>
-        <div class='col-2'></div>
-      </div>
-    </div>
+  
 
   <!-- Navbar -->
   <nav class="navbar bg-body-tertiary fixed-top">
@@ -78,18 +60,40 @@
     </div>
   </nav>
 
+    <!-- Input Character Name -->
+    <div class='container'>
+      <div class='row'>
+        <div class='col-2'></div>
+        <div class='col-8'>
+          <form onkeypress="return event.keyCode != 13">
+            <div class="row mb-3">
+              <label for="inputLabel" class="col-sm-2 col-form-label">Character</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputName" oninput="init(this)" list="opts">
+                <datalist id="opts"></datalist>
+              </div>
+              <button type="button" class="btn btn-primary col-sm-1" onclick="resetCharacterInput()" id = "rstbtn">x</button>
+            </div>
+          </form>
+        </div>
+        <div class='col-2'></div>
+      </div>
+    </div>
+
   <!-- Talent Material Calculator -->
 
   <div class='container'>
-    <!-- Input box on the left -->
+    <div class = "row" style = "height: 50%;" >
 
-    <div class='col-6 border border-dark text-center' style = "height: 50%;">
+      <!-- Input box on the left -->
+
+    <div class='col-6 border border-dark text-center'>
 
       <form onkeypress="return event.keyCode != 13" id="talForm" >
         <!-- Normal Attack -->
-        <div class="row mt-3">
+        <div class="row">
           <div class = "col-md-3"></div>
-          <div class = "col-md-6">
+          <div class = "col-md-6 mt-4">
             <label for = "slider-1">Normal Attack</label>
             <div id = "slider-1"></div>
           </div>
@@ -98,9 +102,9 @@
         
         <!-- Skill -->
 
-        <div class="row mt-3">
+        <div class="row">
           <div class = "col-md-3"></div>
-          <div class = "col-md-6">
+          <div class = "col-md-6 mt-4">
             <label for = "slider-2">Special Attack</label>
             <div id = "slider-2"></div>
           </div>
@@ -109,9 +113,9 @@
 
         <!-- Ult -->
 
-        <div class="row mt-3">
+        <div class="row">
           <div class = "col-md-3"></div>
-          <div class = "col-md-6">
+          <div class = "col-md-6 mt-4">
             <label for = "slider-3">Ultimate Attack</label>
             <div id = "slider-3"></div>
           </div>
@@ -124,6 +128,36 @@
 
     <!-- Materials display on the right -->
 
+    <div class = 'col-6 border border-dark text-center'>
+
+      <table class="table table-hover text-center" id="talenttbl">
+        <tr>
+            <th>Teachings:</th>
+            <th>Guides:</th>
+            <th>Philosophies:</th>
+        </tr>
+        <tr>
+            <td>
+              <img src="#" class="img-fluid img-thumbnail mx-auto d-block" alt="item img" id="tal1"
+              style="width: 50px; height: 50px;">
+            </td>
+            <td><img src="#" class="img-fluid img-thumbnail mx-auto d-block" alt="item img" id="tal2"
+              style="width: 50px; height: 50px;">
+            </td>
+            <td><img src="#" class="img-fluid img-thumbnail mx-auto d-block" alt="item img" id="tal3"
+              style="width: 50px; height: 50px;">
+            </td>
+        </tr>
+        <tr>
+            <td>count</td>
+            <td>count</td>
+            <td>count</td>
+        </tr>
+        </table>
+
+    </div>
+
+    </div>
   </div>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>

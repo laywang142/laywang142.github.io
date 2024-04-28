@@ -1,0 +1,29 @@
+body {
+    text-align: center;
+    padding: 70px;
+}
+
+/* #header {
+    background-color: lightgray;
+    text-align: center;
+    height: 30%;
+    width:100%;
+    top: 0%;
+    border-bottom: 1px solid black;
+    z-index: 1;
+}*/ 
+
+button {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+
+/* single-row column design */
+tr { display: block; float: left; }
+th, td { display: block; border: 1px solid black; }
+
+/* border-collapse */
+tr>*:not(:first-child) { border-top: 0; }
+tr:not(:first-child)>* { border-left:0; }

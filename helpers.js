@@ -9,6 +9,8 @@ noUiSlider.create(slider, {
         'max': 10
     },
 
+    step:1,
+
     // Show a scale with the slider
     pips: {
       mode: 'steps',
@@ -28,6 +30,8 @@ noUiSlider.create(slider, {
         'max': 10
     },
 
+    step:1,
+
     // Show a scale with the slider
     pips: {
       mode: 'steps',
@@ -46,6 +50,8 @@ noUiSlider.create(slider, {
         'min': 1,
         'max': 10
     },
+
+    step:1,
 
     // Show a scale with the slider
     pips: {
